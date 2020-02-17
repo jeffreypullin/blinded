@@ -1,12 +1,20 @@
 #' Rate images blindly
 #'
-#' @param dir The directory the images are in.
+#' The `rate_blindly()` function is desinged to faciliate the task of
+#' rating a set of images blindly - that is without knowledge of any
+#' characteristics of the image.
 #'
-#' @details This function is designed to assist people who need to blindly rate
-#'  a set of images (i.e. rate the images without knowing any characteristics
-#'  of the subject of the image). To achieve this the images are shown to the
-#'  rater randomly and without showing the file name (which may contain
-#'  information about the image).
+#' This task is complicated by the fact that images are generally stored with
+#' filenames that contain information about the image. This may also mean
+#' that the ordering of images in a file system is affected by
+#' chracteristics of the images.
+#'
+#' To circumvent these issues `rate_blindly()` provides an interface where
+#' images are shown to the rater *without filenames* and in a *random* order.
+#'
+#' @param dir The directory the images are in. This directory must not contain
+#'   any other files. An image is defined as anything [magick::image_read()]
+#'   can read.
 #'
 #' @return A tibble with two columns.
 #'   file_name: The file name of the image
@@ -41,5 +49,3 @@ rate_blindly <- function(dir) {
     rating    = as.numeric(ratings)
   )
 }
-
-rate_blindly("/Users/jeffreypullin/Desktop/screen_shots")

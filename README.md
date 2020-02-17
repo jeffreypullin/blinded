@@ -26,5 +26,6 @@ R editing environements.
 To install the package run:
 
 ```r
+# install.packages("remotes")
 remotes::install_github("jeffreypullin/blinded")
 ```

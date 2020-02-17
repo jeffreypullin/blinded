@@ -33,8 +33,8 @@
 rate_blindly <- function(dir) {
 
   if (!rstudioapi::isAvailable()) {
-    stop("Currently `rate_blindly()` requires the RStudio veiwing pane
-         to display images", call. = FALSE)
+    stop("`rate_blindly()` requires the RStudio veiwing pane to display images",
+         call. = FALSE)
   }
 
   paths <- list.files(dir, full.names = TRUE)

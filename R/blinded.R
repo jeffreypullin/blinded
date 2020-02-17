@@ -12,6 +12,10 @@
 #' To circumvent these issues `rate_blindly()` provides an interface where
 #' images are shown to the rater *without filenames* and in a *random* order.
 #'
+#' @details Currently `rate_blindly()` depends on magick's integration with
+#' the RStudiov viewer pane to display images. The function will therefore
+#' fail (informatively) in non-RStudio R editing enviroments.
+#'
 #' @param dir The directory the images are in. This directory must not contain
 #'   any other files. An image is defined as anything [magick::image_read()]
 #'   can read.
@@ -22,10 +26,17 @@
 #'
 #' @importFrom magick image_read
 #' @importFrom tibble tibble
+#' @importFrom rstudioapi isAvaiable
 #'
 #' @export
 #'
 rate_blindly <- function(dir) {
+
+  if (!rstudioapi::isAvailable()) {
+    stop("Currently `rate_blindly()` requires the RStudio veiwing pane
+         to display images", call. = FALSE)
+  }
+
   paths <- list.files(dir, full.names = TRUE)
   N <- length(paths)
 

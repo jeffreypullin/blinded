@@ -2,4 +2,5 @@
 
 export(rate_blindly)
 importFrom(magick,image_read)
+importFrom(rstudioapi,isAvailable)
 importFrom(tibble,tibble)

@@ -8,16 +8,16 @@ rate_blindly(dir)
 }
 \arguments{
 \item{dir}{The directory the images are in. This directory must not contain
-any other files. An image is defined as anything [magick::image_read()]
+any other files. An image is defined as anything \code{\link[magick:image_read]{magick::image_read()}}
 can read.}
 }
 \value{
 A tibble with two columns.
-  file_name: The file name of the image
-  rating: The rating given to the image
+file_name: The file name of the image
+rating: The rating given to the image
 }
 \description{
-The `rate_blindly()` function is desinged to faciliate the task of
+The \code{rate_blindly()} function is desinged to faciliate the task of
 rating a set of images blindly - that is without knowledge of any
 characteristics of the image.
 }
@@ -27,6 +27,10 @@ filenames that contain information about the image. This may also mean
 that the ordering of images in a file system is affected by
 chracteristics of the images.
 
-To circumvent these issues `rate_blindly()` provides an interface where
-images are shown to the rater *without filenames* and in a *random* order.
+To circumvent these issues \code{rate_blindly()} provides an interface where
+images are shown to the rater \emph{without filenames} and in a \emph{random} order.
+
+Currently \code{rate_blindly()} depends on magick's integration with
+the RStudiov viewer pane to display images. The function will therefore
+fail (informatively) in non-RStudio R editing enviroments.
 }

@@ -26,7 +26,7 @@
 #'
 #' @importFrom magick image_read
 #' @importFrom tibble tibble
-#' @importFrom rstudioapi isAvaiable
+#' @importFrom rstudioapi isAvailable
 #'
 #' @export
 #'

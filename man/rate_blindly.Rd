@@ -30,7 +30,13 @@ chracteristics of the images.
 To circumvent these issues \code{rate_blindly()} provides an interface where
 images are shown to the rater \emph{without filenames} and in a \emph{random} order.
 
+If you enter "save" as a rating then the rating
+
 Currently \code{rate_blindly()} depends on magick's integration with
 the RStudiov viewer pane to display images. The function will therefore
 fail (informatively) in non-RStudio R editing enviroments.
+
+If you enter "save" as a rating the rating 'session' (the list of ratings
+made to date) will be saved and the rating session can be resumed at a
+later date.
 }
